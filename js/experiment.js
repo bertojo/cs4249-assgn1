@@ -38,7 +38,7 @@ function getData(relativePath) {
 // Loads the CSV data files on page load and store it to global variables
 function initExperiment() {
 
-	// Get Trails
+	// Get Trails (Tasks for users)
 	var data = getData(trialsFile);
 
 	var records = data.split("\n");
