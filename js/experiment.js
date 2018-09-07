@@ -51,8 +51,13 @@ function initExperiment() {
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,
-			'Target Item': targetItem
+			'Target Item': targetItem,
+			'Menu Breadth': menuBreadth,
+			'Control Device': isUsingMouse === "true" ? "Mouse" : "Trackpad"
 		};
+		console.log("isUsingMouse: ", typeof(isUsingMouse));
+		console.log("trialsData: ", trialsData[i]);
+		console.log("===========");
 	}
 
 	// Get Menus
