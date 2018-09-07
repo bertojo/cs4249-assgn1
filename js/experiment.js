@@ -55,9 +55,8 @@ function initExperiment() {
 			'Menu Breadth': menuBreadth,
 			'Control Device': isUsingMouse === "true" ? "Mouse" : "Trackpad"
 		};
-		console.log("isUsingMouse: ", typeof(isUsingMouse));
-		console.log("trialsData: ", trialsData[i]);
-		console.log("===========");
+		// console.log("trialsData: ", trialsData[i]);
+		// console.log("===========");
 	}
 
 	// Get Menus
@@ -91,6 +90,8 @@ function nextTrial() {
 		var menuType = trialsData[currentTrial]['Menu Type'];
 		var menuDepth = trialsData[currentTrial]['Menu Depth'];
 		var targetItem = trialsData[currentTrial]['Target Item'];
+		var menuBreadth = trialsData[currentTrial]['Menu Breadth'];
+		var isUsingMouse = trialsData[currentTrial]['Control Device'];
 
 		document.getElementById("trialNumber").innerHTML = String(currentTrial) + "/" + String(numTrials);
 		document.getElementById("menuType").innerHTML = menuType;
@@ -98,12 +99,16 @@ function nextTrial() {
 		document.getElementById("targetItem").innerHTML = targetItem;
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
+		document.getElementById("controlDevice").innerHTML = isUsingMouse;
+		document.getElementById("menuBreadth").innerHTML = menuBreadth;
 
 		tracker.newTrial();
 		tracker.trial = currentTrial;
 		tracker.menuType = menuType;
 		tracker.menuDepth = menuDepth;
 		tracker.targetItem = targetItem;
+		tracker.isUsingMouse = isUsingMouse;
+		tracker.menuBreadth = menuBreadth;
 
 		if (menuType === "Marking") {
 
