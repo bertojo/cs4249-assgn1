@@ -1,7 +1,7 @@
-Menu Type,Menu Depth,Target Item
-Marking,1,Clothing
-Marking,2,Hats
-Marking,3,Jeans
-Radial,1,Clothing
-Radial,2,Hats
-Radial,3,Jeans
+Menu Type,Menu Depth,Target Item,Menu Breadth, Mouse
+Marking,1,Clothing,4,true
+Marking,2,Hats,4,true
+Marking,3,Jeans,4,true
+Radial,1,Clothing,6,false
+Radial,2,Hats,6,false
+Radial,3,Jeans,6,false

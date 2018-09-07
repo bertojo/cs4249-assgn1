@@ -19,7 +19,6 @@ var radialMenuL1 = [];
 var radialMenuL2 = [];
 var radialMenuL3 = [];
 var tracker = new ExperimentTracker();
-console.log("TRACKER: ", tracker);
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
 
@@ -47,6 +46,8 @@ function initExperiment() {
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
 		var targetItem = cells[2].trim();
+		var menuBreadth = cells[3].trim();
+		var isUsingMouse = cells[4].trim();
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,
