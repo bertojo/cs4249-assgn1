@@ -19,12 +19,11 @@ var radialMenuL1 = [];
 var radialMenuL2 = [];
 var radialMenuL3 = [];
 var tracker = new ExperimentTracker();
+console.log("TRACKER: ", tracker);
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
 
-
-
-
+// let isUsingMouse = true;
 
 // Load CSV files from data and return text
 function getData(relativePath) {
@@ -59,7 +58,7 @@ function initExperiment() {
 	var menuL1Data = getData(menuL1File);
 	var menuL2Data = getData(menuL2File);
 	var menuL3Data = getData(menuL3File);
-	
+
 	// Format CSV Menu to respective Menu structures
 	markingMenuL1 = formatMarkingMenuData(menuL1Data);
 	markingMenuL2 = formatMarkingMenuData(menuL2Data);
@@ -67,22 +66,20 @@ function initExperiment() {
 	radialMenuL1 = formatRadialMenuData(menuL1Data);
 	radialMenuL2 = formatRadialMenuData(menuL2Data);
 	radialMenuL3 = formatRadialMenuData(menuL3Data);
-	
+
 	//Start the first trial
 	nextTrial();
 }
 
 // Wrapper around nextTrial() to prevent click events while loading menus
-function loadNextTrial(e){
+function loadNextTrial(e) {
 	e.preventDefault();
 	nextTrial();
-	
+
 }
 
 // Move to next trai and record events
 function nextTrial() {
-
-	
 	if (currentTrial <= numTrials) {
 
 		var menuType = trialsData[currentTrial]['Menu Type'];
@@ -103,15 +100,15 @@ function nextTrial() {
 		tracker.targetItem = targetItem;
 
 		if (menuType === "Marking") {
-				
+
 			initializeMarkingMenu();
-			
-			if(menuDepth == 1){
+
+			if (menuDepth == 1) {
 				menu = MarkingMenu(markingMenuL1, document.getElementById('marking-menu-container'));
 			}
-			else if(menuDepth == 2){
+			else if (menuDepth == 2) {
 				menu = MarkingMenu(markingMenuL2, document.getElementById('marking-menu-container'));
-			}else if(menuDepth == 3){
+			} else if (menuDepth == 3) {
 				menu = MarkingMenu(markingMenuL3, document.getElementById('marking-menu-container'));
 			}
 
@@ -119,13 +116,13 @@ function nextTrial() {
 
 		} else if (menuType === "Radial") {
 
-			initializeRadialMenu();			
-			if (menuDepth == 1){
+			initializeRadialMenu();
+			if (menuDepth == 1) {
 				menu = createRadialMenu(radialMenuL1);
 			}
-			else if(menuDepth == 2){
+			else if (menuDepth == 2) {
 				menu = createRadialMenu(radialMenuL2);
-			}else if(menuDepth == 3){
+			} else if (menuDepth == 3) {
 				menu = createRadialMenu(radialMenuL3);
 			}
 
@@ -134,9 +131,9 @@ function nextTrial() {
 
 		currentTrial++;
 	} else {
-		
-	    var nextButton = document.getElementById("nextButton");
-	    nextButton.innerHTML = "Done";
+		// Download CSV Results
+		var nextButton = document.getElementById("nextButton");
+		nextButton.innerHTML = "Done";
 		tracker.toCsv();
 	}
 }
@@ -148,21 +145,21 @@ function nextTrial() {
 /*Functions related to MarkingMenu*/
 
 // Reconstructs marking menu container
-function initializeMarkingMenu(){
-	
+function initializeMarkingMenu() {
+
 	//Unload Radial Menu
 	var radialMenuContainer = document.getElementById('radial-menu-container');
-	if(radialMenuContainer != null){
+	if (radialMenuContainer != null) {
 		radialMenuContainer.parentNode.removeChild(radialMenuContainer);
 	}
-	
+
 	// Load Marking Menu
 	var interactionContainer = document.getElementById('interaction-container');
 	if (markingMenuSubscription != null) {
 		markingMenuSubscription.unsubscribe();
 	}
 	var markingMenuContainer = document.getElementById('marking-menu-container');
-	if(markingMenuContainer == null){
+	if (markingMenuContainer == null) {
 		interactionContainer.innerHTML += "<div id=\"marking-menu-container\" style=\"height:100%;width:100%\" onmousedown=\"markingMenuOnMouseDown()\" oncontextmenu=\"preventRightClick(event)\"></div>";
 	}
 }
@@ -208,19 +205,19 @@ function formatMarkingMenuData(data) {
 }
 
 // Function to start tracking timer on mouse down
-function markingMenuOnMouseDown(){
+function markingMenuOnMouseDown() {
 
 	tracker.startTimer();
 }
 
 //Function to start tracking timer on mouse down
-function markingMenuOnSelect(selectedItem){
+function markingMenuOnSelect(selectedItem) {
 
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
 
-function preventRightClick(e){
+function preventRightClick(e) {
 	e.preventDefault();
 }
 
@@ -228,75 +225,75 @@ function preventRightClick(e){
 /*Functions related to RadialMenu*/
 
 // Reconstructs radial menu container
-function initializeRadialMenu(){
-	
+function initializeRadialMenu() {
+
 	// Unload Marking Menu
 	if (markingMenuSubscription != null) {
 		markingMenuSubscription.unsubscribe();
 	}
 	var markingMenuContainer = document.getElementById('marking-menu-container');
-	if(markingMenuContainer!=null){
+	if (markingMenuContainer != null) {
 		markingMenuContainer.parentNode.removeChild(markingMenuContainer);
 	}
-	
-	
+
+
 
 	// Reload Radial Menu
 	var interactionContainer = document.getElementById('interaction-container');
 	var radialMenuContainer = document.getElementById('radial-menu-container');
-	if(radialMenuContainer == null){
+	if (radialMenuContainer == null) {
 		interactionContainer.innerHTML += "<div id=\"radial-menu-container\" style=\"height:100%;width:100%\" oncontextmenu=\"toggleRadialMenu(event)\"></div>";
 	}
 
 }
 
 // Create radial menu svg element
-function createRadialMenu(radialMenuL){
-	
-    var radialmenuElement = document.getElementById('radialmenu');
-    if(radialmenuElement != null){
-    	radialmenuElement.parentNode.removeChild(radialmenuElement);
-    }
-	
-	
+function createRadialMenu(radialMenuL) {
+
+	var radialmenuElement = document.getElementById('radialmenu');
+	if (radialmenuElement != null) {
+		radialmenuElement.parentNode.removeChild(radialmenuElement);
+	}
+
+
 	var w = window.innerWidth;
 	var h = window.innerHeight;
 	var radialMenuSvgElement = document.getElementById('radial-menu-svg');
-	if (radialMenuSvgElement != null){
+	if (radialMenuSvgElement != null) {
 		radialMenuSvgElement.parentNode.removeChild(radialMenuSvgElement);
 	}
-	radialMenuSvg = d3.select("#radial-menu-container").append("svg").attr("width", w).attr("height", h).attr("id","radial-menu-svg");
+	radialMenuSvg = d3.select("#radial-menu-container").append("svg").attr("width", w).attr("height", h).attr("id", "radial-menu-svg");
 	radialMenuTree = radialMenuL;
 	return radialMenuSvg;
 }
 
 // Toggle radial menu on right click
 function toggleRadialMenu(e) {
-	
-	if(tracker.startTime == null){
-	
-		if(radialMenuTree != null){
-				menu = module.exports(radialMenuTree, {
-					x: e.clientX,
-					y: e.clientY
-				}, radialMenuSvg);
-		
-			// Start timing once menu appears
-			tracker.startTimer();
-		}
-	}else{
-		
-		// Record previous item
-		tracker.recordSelectedItem(null);
-		
-		if(radialMenuTree != null){
+
+	if (tracker.startTime == null) {
+
+		if (radialMenuTree != null) {
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
 				y: e.clientY
 			}, radialMenuSvg);
-	
-		// Start timing once menu appears
-		tracker.startTimer();
+
+			// Start timing once menu appears
+			tracker.startTimer();
+		}
+	} else {
+
+		// Record previous item
+		tracker.recordSelectedItem(null);
+
+		if (radialMenuTree != null) {
+			menu = module.exports(radialMenuTree, {
+				x: e.clientX,
+				y: e.clientY
+			}, radialMenuSvg);
+
+			// Start timing once menu appears
+			tracker.startTimer();
 		}
 	}
 	e.preventDefault();
@@ -308,7 +305,7 @@ function radialMenuOnSelect() {
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
-	
+
 	document.getElementById("selectedItem").innerHTML = this.id;
 }
 
@@ -343,8 +340,8 @@ function formatRadialMenuData(data) {
 			continue;
 		} else {
 			var _children = menuItems[parent]['_children'];
-			if(menuItems[id]['_children'].length == 0){
-				menuItems[id]['callback'] = radialMenuOnSelect;	
+			if (menuItems[id]['_children'].length == 0) {
+				menuItems[id]['callback'] = radialMenuOnSelect;
 			}
 			_children.push(menuItems[id]);
 			delete menuItems[id];
@@ -355,10 +352,10 @@ function formatRadialMenuData(data) {
 
 	var menuItemsList = [];
 	for (var key in menuItems) {
-		if (menuItems[key]['_children'].length == 0){
+		if (menuItems[key]['_children'].length == 0) {
 			delete menuItems[key]['_children'];
 			menuItems[key]['callback'] = radialMenuOnSelect;
-		} else{
+		} else {
 			delete menuItems[key]['callback'];
 		}
 		menuItemsList.push(menuItems[key]);
