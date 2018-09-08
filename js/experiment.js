@@ -56,9 +56,10 @@ function initExperiment() {
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
 		if (records[i].trim() == "") {
+			console.log("HERE: ", i);
 			continue;
 		}
-
+		console.log("TEST: ", i);
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
