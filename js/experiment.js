@@ -1,10 +1,17 @@
 'use strict';
 
 // Location of data files
-const trialsFile = "./data/experiments.csv"
-const menuL1File = "./data/menu_depth_1.csv"
-const menuL2File = "./data/menu_depth_2.csv"
-const menuL3File = "./data/menu_depth_3.csv"
+const trialsFile = "./data/experiments.csv";
+const menuL1File = "./data/menu_depth_1.csv";
+const menuL2File = "./data/menu_depth_2.csv";
+const menuL3File = "./data/menu_depth_3.csv";
+
+const b4d1 = "./data/condition1.csv";
+const b4d2 = "./data/condition2.csv";
+const b4d3 = "./data/condition3.csv";
+// const condition1 = "./data/condition1.csv";
+// const condition1 = "./data/condition1.csv";
+
 
 // Global variables
 var menu;
@@ -60,9 +67,9 @@ function initExperiment() {
 	}
 
 	// Get Menus
-	var menuL1Data = getData(menuL1File);
-	var menuL2Data = getData(menuL2File);
-	var menuL3Data = getData(menuL3File);
+	var menuL1Data = getData(b4d1);
+	var menuL2Data = getData(b4d2);
+	var menuL3Data = getData(b4d3);
 
 	// Format CSV Menu to respective Menu structures
 	markingMenuL1 = formatMarkingMenuData(menuL1Data);
