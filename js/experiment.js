@@ -109,12 +109,15 @@ function loadNextTrial(e) {
 
 }
 
-// Move to next trai and record events
+// Move to next trial and record events
 function nextTrial() {
 	if (currentTrial <= numTrials) {
-		console.log("TRIAL: ", trialsData[currentTrial]);
-		console.log("TRIAL: ", trialsData[currentTrial] == null);
-		console.log("TRIAL: ", typeof(trialsData[currentTrial]));
+		// console.log("TRIAL: ", trialsData[currentTrial]);
+		// console.log("TRIAL: ", trialsData[currentTrial] == null);
+		// console.log("TRIAL: ", typeof(trialsData[currentTrial]));
+		if (!trialsData[currentTrial]) {
+			nextTrial();
+		}
 		var menuType = trialsData[currentTrial]['Menu Type'];
 		var menuDepth = trialsData[currentTrial]['Menu Depth'];
 		var targetItem = trialsData[currentTrial]['Target Item'];
