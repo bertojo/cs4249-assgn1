@@ -55,10 +55,6 @@ function initExperiment() {
 	var records = data.split("\n");
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
-		console.log("HERE 1: ", records[i]);
-		console.log("HERE 2: ", records[i] == "");
-		console.log("HERE 3: ", typeof(records[i]));
-
 		if (records[i].trim() == "") {
 			continue;
 		}
