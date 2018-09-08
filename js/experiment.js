@@ -6,11 +6,12 @@ const menuL1File = "./data/menu_depth_1.csv";
 const menuL2File = "./data/menu_depth_2.csv";
 const menuL3File = "./data/menu_depth_3.csv";
 
-const b4d1 = "./data/condition1.csv";
-const b4d2 = "./data/condition2.csv";
-const b4d3 = "./data/condition3.csv";
-// const condition1 = "./data/condition1.csv";
-// const condition1 = "./data/condition1.csv";
+const b4d1 = "./data/b4d1.csv";
+const b4d2 = "./data/b4d2.csv";
+const b4d3 = "./data/b4d3.csv";
+const b6d1 = "./data/b6d1.csv";
+const b6d2 = "./data/b6d2.csv";
+const b6d3 = "./data/b6d3.csv";
 
 
 // Global variables

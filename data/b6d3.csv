@@ -1,0 +1,223 @@
+Id,Parent,Label
+1,0,Animals
+2,0,Food
+3,0,Clothing
+4,0,Companies
+5,0,Jobs
+6,0,Movies
+7,1,Mammals
+8,1,Reptiles
+9,1,Fish
+10,1,Birds
+11,1,Amphibians
+12,1,Insects
+13,2,Fruit
+14,2,Vegetables
+15,2,Meat
+16,2,Dairy
+17,2,Grain
+18,2,Nuts
+19,3,Tops
+20,3,Bottoms
+21,3,Shoes
+22,3,Hats
+23,3,Accessories
+24,3,Undergarments
+25,4,Sports
+26,4,Fashion
+27,4,Internet
+28,4,Camera
+29,4,Credit Card
+30,4,Chocolate
+31,5,Arts
+32,5,Media
+33,5,Medical
+34,5,Business
+35,5,Education
+36,5,Defense
+37,6,Superhero
+38,6,Comedy
+39,6,Horror
+40,6,Musicals
+41,6,Animation
+42,6,Sci-fi
+43,5,Dogs
+44,5,Hamsters
+45,5,Lion
+46,5,Tiger
+47,5,Zebra
+48,5,Giraffe
+49,6,Lizards
+50,6,Turtles
+51,6,Crocodiles
+52,6,Snakes
+53,6,Geckos
+54,6,Charmelions
+55,7,Catfish
+56,7,Salmon
+57,7,Tuna
+58,7,Guppy
+59,7,Sardines
+60,7,Goldfish
+61,8,Pigeon
+62,8,Sparrow
+63,8,Eagle
+64,8,Vulture
+65,8,Cranes
+66,8,Humming bird
+67,8,Frog
+68,8,Toad
+69,8,Salamander
+70,8,Newt
+71,8,Tadpoles
+72,8,Caecilians
+73,8,Housefly
+74,8,Cockroach
+75,8,Mosquito
+76,8,Ants
+77,8,Bee
+78,8,Ladybird
+79,9,Apple
+80,9,Mango
+81,9,Grapes
+82,9,Watermelon
+83,9,Rambutan
+84,9,Honeydew
+85,10,Brocolli
+86,10,Cabbage
+87,10,Kale
+88,10,Spinach
+89,10,Bean sprout
+90,10,Cauliflower
+91,11,Chicken
+92,11,Beef
+93,11,Pork
+94,11,Mutton
+95,11,Venison
+96,11,Turkey
+97,12,Cheese
+98,12,Cream
+99,12,Yoghurt
+100,12,Milk
+101,12,Butter
+102,12,Eggs
+103,13,Shirt
+104,13,Coat
+105,13,Jacket
+106,13,Singlet
+107,13,Dress
+108,13,Polo Tee
+109,14,Jeans
+110,14,Skirt
+111,14,Shorts
+112,14,Tights
+113,14,Dress pants
+114,14,Joggers
+115,15,Sneakers
+116,15,Heels
+117,15,Slippers
+118,15,Boots
+119,15,Sandals
+120,15,Platforms
+121,16,Fedora
+122,16,Beret
+123,16,Beanie
+124,16,Bucket hat
+125,16,Baseball cap
+126,16,Snapback
+127,17,Adidas
+128,17,Nike
+129,17,Puma
+130,17,Aasics
+131,17,Under Armour
+132,17,Reebok
+133,18,Gucci
+134,18,Prada
+135,18,Coach
+136,18,Burberry
+137,18,Kate Spade
+138,18,Fred Perry
+139,19,Google
+140,19,Facebook
+141,19,Yelp
+142,19,Netflix
+143,19,Airbnb
+144,19,Youtube
+145,20,Canon
+146,20,Polaroid
+147,20,Nikon
+148,20,GoPro
+149,20,Fujifilm
+150,20,Kodak
+151,21,Sculptor
+152,21,Painter
+153,21,Potter
+154,21,Animator
+155,21,Ballerina
+156,21,Singer
+157,22,Actor
+158,22,Cameraman
+159,22,Director
+160,22,News Anchor
+161,22,Reporter
+162,22,Editor
+163,23,Surgeon
+164,23,Doctor
+165,23,Therapists
+166,23,Nurse
+167,23,Vet
+168,23,Physiologist
+169,24,Marketer
+170,24,Traders
+171,24,HR
+172,24,Accountant
+173,24,Salesman
+174,24,Banker
+175,25,Teacher
+176,25,Home Tutor
+177,25,Researcher
+178,25,Principal
+179,25,Lecturer
+180,25,Assistant
+181,26,Soldier
+182,26,Policeman
+183,26,Fire Fighter
+184,26,Pilots
+185,26,Commandos
+186,26,Bodyguards
+187,27,Infinity War
+188,27,Captain America
+189,27,Superman Returns
+190,27,Iron Man
+191,27,Thor: Ragnarok
+192,27,Ant Man
+193,28,Hangover
+194,28,Crazy Rich Asians
+195,28,Johnny English
+196,28,Borat
+197,28,Blockers
+198,28,Bridesmaid
+199,29,It
+200,29,Conjuring
+201,29,The Ring
+202,29,Saw
+203,29,A quiet place
+204,29,Excorcist
+205,30,High School Musical
+206,30,La La Land
+207,30,Greatest Showman
+208,30,Pitch Perfect
+209,30,Ma Ma Mia!
+210,30,Sound of music
+211,31,Moana
+212,31,Finding Nemo
+213,31,The Incredibles
+214,31,Ant's Life
+215,31,Spirirted Away
+216,31,CoCo
+217,32,Star Wars
+218,32,Star Trek
+219,32,Interstellar
+220,32,Martian
+221,32,Alien
+222,32,Looper
