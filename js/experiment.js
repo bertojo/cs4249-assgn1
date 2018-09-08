@@ -59,7 +59,7 @@ function initExperiment() {
 		console.log("HERE 2: ", records[i] == "");
 		console.log("HERE 3: ", typeof(records[i]));
 
-		if (records[i] == "") {
+		if (records[i].trim() == "") {
 			continue;
 		}
 
