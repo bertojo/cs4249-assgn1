@@ -56,10 +56,10 @@ function initExperiment() {
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
 		if (records[i].trim() == "") {
-			console.log("HERE: ", i);
+			// console.log("HERE: ", i);
 			continue;
 		}
-		console.log("TEST: ", i);
+		// console.log("TEST: ", i);
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
@@ -112,7 +112,9 @@ function loadNextTrial(e) {
 // Move to next trai and record events
 function nextTrial() {
 	if (currentTrial <= numTrials) {
-
+		console.log("TRIAL: ", trialsData[currentTrial]);
+		console.log("TRIAL: ", trialsData[currentTrial] == null);
+		console.log("TRIAL: ", typeof(trialsData[currentTrial]));
 		var menuType = trialsData[currentTrial]['Menu Type'];
 		var menuDepth = trialsData[currentTrial]['Menu Depth'];
 		var targetItem = trialsData[currentTrial]['Target Item'];
