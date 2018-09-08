@@ -116,7 +116,7 @@ function nextTrial() {
 		// console.log("TRIAL: ", trialsData[currentTrial] == null);
 		// console.log("TRIAL: ", typeof(trialsData[currentTrial]));
 		if (!trialsData[currentTrial]) {
-			nextTrial();
+			currentTrial++;
 		}
 		var menuType = trialsData[currentTrial]['Menu Type'];
 		var menuDepth = trialsData[currentTrial]['Menu Depth'];
