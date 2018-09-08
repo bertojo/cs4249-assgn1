@@ -26,6 +26,12 @@ var radialMenuTree = null;
 var radialMenuL1 = [];
 var radialMenuL2 = [];
 var radialMenuL3 = [];
+var b4d1Menu = [];
+var b4d2Menu = [];
+var b4d3Menu = [];
+var b6d1Menu = [];
+var b6d1Menu = [];
+var b6d1Menu = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
@@ -68,17 +74,20 @@ function initExperiment() {
 	}
 
 	// Get Menus
-	var menuL1Data = getData(b4d1);
-	var menuL2Data = getData(b4d2);
-	var menuL3Data = getData(b4d3);
+	var menuData1 = getData(b4d1);
+	var menuData2 = getData(b4d2);
+	var menuData3 = getData(b4d3);
+	var menuData4 = getData(b6d1);
+	var menuData5 = getData(b6d2);
+	var menuData6 = getData(b6d3);
 
 	// Format CSV Menu to respective Menu structures
-	markingMenuL1 = formatMarkingMenuData(menuL1Data);
-	markingMenuL2 = formatMarkingMenuData(menuL2Data);
-	markingMenuL3 = formatMarkingMenuData(menuL3Data);
-	radialMenuL1 = formatRadialMenuData(menuL1Data);
-	radialMenuL2 = formatRadialMenuData(menuL2Data);
-	radialMenuL3 = formatRadialMenuData(menuL3Data);
+	markingMenuL1 = formatMarkingMenuData(menuData1);
+	markingMenuL2 = formatMarkingMenuData(menuData2);
+	markingMenuL3 = formatMarkingMenuData(menuData3);
+	radialMenuL1 = formatRadialMenuData(menuData4);
+	radialMenuL2 = formatRadialMenuData(menuData5);
+	radialMenuL3 = formatRadialMenuData(menuData6);
 
 	//Start the first trial
 	nextTrial();
