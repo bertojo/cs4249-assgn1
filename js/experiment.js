@@ -55,11 +55,14 @@ function initExperiment() {
 	var records = data.split("\n");
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
-		var cells = records[i].split(",");
-		if (cells[0] == undefined) {
-			// just for organisation of csv sake
+		console.log("HERE: ", records[i]);
+		console.log("HERE: ", typeof(records[i]));
+
+		if (records[i] == "") {
 			continue;
 		}
+
+		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
 		var targetItem = cells[2].trim();
