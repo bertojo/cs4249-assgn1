@@ -176,10 +176,10 @@ function nextTrial() {
 			}
 
 			markingMenuSubscription = menu.subscribe(
-				(selection, children) => {
+				(selection) => {
 					console.log("HERE: ", selection);
-					console.log("HERE 2: ", children);
 					markingNumSelectsInCurrentTrial++;
+					console.log("HERE 2: ", markingNumSelectsInCurrentTrial);
 					markingMenuOnSelect(selection);
 				}
 			);
@@ -283,13 +283,13 @@ function formatMarkingMenuData(data) {
 
 // Function to start tracking timer on mouse down
 function markingMenuOnMouseDown() {
-
+	markingNumSelectsInCurrentTrial++;
 	tracker.startTimer();
 }
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem) {
-
+	markingNumSelectsInCurrentTrial++;
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
