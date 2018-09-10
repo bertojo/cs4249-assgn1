@@ -164,10 +164,13 @@ function nextTrial() {
 			} else if (menuBreadth == 6) {
 				if (menuDepth == 1) {
 					menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
+					console.log("HERE 1: ", menu);
 				} else if (menuDepth == 2) {
 					menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
+					console.log("HERE 2: ", menu);
 				} else if (menuDepth == 3) {
 					menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
+					console.log("HERE 3: ", menu);
 				}
 			}
 			// if (menuDepth == 1 && menuBreadth == 4) {
