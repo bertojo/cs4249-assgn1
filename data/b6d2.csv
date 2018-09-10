@@ -1,5 +1,5 @@
 Id,Parent,Label
-1,0,Animals
+1,0,Animal
 2,0,Food
 3,0,Clothing
 4,0,Company
@@ -8,7 +8,7 @@ Id,Parent,Label
 7,0,Software
 8,0,Country
 5,1,Mammal
-6,1,Reptiles
+6,1,Reptile
 7,1,Fish
 8,1,Birds
 9,1,Amphibian
@@ -23,7 +23,7 @@ Id,Parent,Label
 18,2,Nuts
 19,2,Drink
 20,2,Junk Food
-21,3,Tops
+21,3,Top
 22,3,Bottoms
 23,3,Shoes
 24,3,Hat
