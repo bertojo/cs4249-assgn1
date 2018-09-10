@@ -108,7 +108,15 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
-	nextTrial();
+	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
+		$("#targetItem").css("background-color", "#444444");
+		nextTrial();
+	} else {
+		// Show error
+		$("#targetItem").css("background-color", "red");
+	}
+	
+	
 
 }
 
