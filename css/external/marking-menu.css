@@ -104,43 +104,58 @@
   border-bottom-left-radius: 0; }
 
   .marking-menu-item[data-item-angle='59'] .marking-menu-label {
-    bottom: -84.56854px;
-    left: 56.56854px; }
+    /* bottom: -84.56854px;
+    left: 56.56854px; */
+    bottom: -107.56854px;
+    left: 43.56854px; 
+  }
   
   .marking-menu-item[data-item-angle='59'] .marking-menu-line {
     transform: rotate(60deg); }
 
     .marking-menu-item[data-item-angle='118'] .marking-menu-label {
-      bottom: -84.56854px;
-      left: 56.56854px; }
+      /* bottom: -84.56854px;
+      left: 56.56854px; */
+      bottom: -107.56854px;
+      left: -149.43146px;
+    }
     
     .marking-menu-item[data-item-angle='118'] .marking-menu-line {
       transform: rotate(120deg); }
 
       .marking-menu-item[data-item-angle='177'] .marking-menu-label {
-        bottom: -84.56854px;
-        left: 56.56854px; }
+        /* bottom: -84.56854px;
+        left: 56.56854px; */
+        bottom: -14.56854px;
+        left: -199.43146px; 
+      }
       
       .marking-menu-item[data-item-angle='177'] .marking-menu-line {
         transform: rotate(180deg); }
 
         .marking-menu-item[data-item-angle='236'] .marking-menu-label {
-          bottom: -84.56854px;
-          left: 56.56854px; }
+          /* bottom: -84.56854px;
+          left: 56.56854px; */
+          bottom: 77.43146px;
+          left: -148.43146px; 
+        }
         
         .marking-menu-item[data-item-angle='236'] .marking-menu-line {
           transform: rotate(240deg); }
 
           .marking-menu-item[data-item-angle='295'] .marking-menu-label {
-            bottom: -84.56854px;
-            left: 56.56854px; }
+            /* bottom: -84.56854px;
+            left: 56.56854px;  */
+            bottom: 75.43146px;
+            left: 43.56854px;
+          }
           
           .marking-menu-item[data-item-angle='295'] .marking-menu-line {
             transform: rotate(300deg); }
 
-            .marking-menu-item[data-item-angle='354'] .marking-menu-label {
+            /* .marking-menu-item[data-item-angle='354'] .marking-menu-label {
               bottom: -84.56854px;
               left: 56.56854px; }
             
             .marking-menu-item[data-item-angle='354'] .marking-menu-line {
-              transform: rotate(360deg); }
+              transform: rotate(360deg); } */
