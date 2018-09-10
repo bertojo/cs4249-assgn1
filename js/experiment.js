@@ -37,6 +37,9 @@ var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
 
+var radialNumSelectsInCurrentTrial = 0;
+var markingNumSelectsInCurrentTrial = 0;
+
 // Load CSV files from data and return text
 function getData(relativePath) {
 	var xmlHttp = new XMLHttpRequest();
@@ -111,6 +114,10 @@ function loadNextTrial(e) {
 
 // Move to next trial and record events
 function nextTrial() {
+	// Reset action counter
+	radialNumSelectsInCurrentTrial = 0;
+	markingNumSelectsInCurrentTrial = 0;
+	
 	if (currentTrial <= numTrials) {
 		// console.log("TRIAL: ", trialsData[currentTrial]);
 		// console.log("TRIAL: ", trialsData[currentTrial] == null);
@@ -164,6 +171,7 @@ function nextTrial() {
 				(selection, children) => {
 					console.log("HERE: ", selection);
 					console.log("HERE 2: ", children);
+					markingNumSelectsInCurrentTrial++;
 					markingMenuOnSelect(selection);
 				}
 			);
@@ -330,24 +338,27 @@ function createRadialMenu(radialMenuL) {
 
 // Toggle radial menu on right click
 function toggleRadialMenu(e) {
-
+	console.log("A");
 	if (tracker.startTime == null) {
-
+		console.log("A");
 		if (radialMenuTree != null) {
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
 				y: e.clientY
 			}, radialMenuSvg);
-
+			
 			// Start timing once menu appears
 			tracker.startTimer();
+			radialNumSelectsInCurrentTrial = 1;
+			console.log("C: ", radialNumSelectsInCurrentTrial);
 		}
 	} else {
-
+		console.log("D");
 		// Record previous item
 		tracker.recordSelectedItem(null);
 
 		if (radialMenuTree != null) {
+			console.log("E");
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
 				y: e.clientY
@@ -362,7 +373,7 @@ function toggleRadialMenu(e) {
 
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
-
+	radialNumSelectsInCurrentTrial++;
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
