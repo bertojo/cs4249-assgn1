@@ -108,14 +108,14 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
-	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
+	// if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
 		nextTrial();
-	} else {
-		// Show error
-		$("#targetItem").css("background-color", "red");
-		tracker.attempt++;
-	}
+	// } else {
+	// 	// Show error
+	// 	$("#targetItem").css("background-color", "red");
+	// 	tracker.attempt++;
+	// }
 	console.log("TRACKER: ", tracker);
 }
 
