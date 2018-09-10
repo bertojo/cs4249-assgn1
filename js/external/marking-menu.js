@@ -997,7 +997,7 @@
             if ('number' == typeof $$obj.length) {
               for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
                 var item = $$obj[pug_index0];
-                console.log("HERE 1: ", item);
+                // console.log("HERE 1: ", item);
                 pug_html = pug_html + "<div" + (" class=\"marking-menu-item\"" + pug.attr("data-item-id", item.id, true, true) + pug.attr("data-item-angle", item.angle, true, true)) + ">";
                 pug_html = pug_html + "<div class=\"marking-menu-line\"></div>";
                 pug_html = pug_html + "<div class=\"marking-menu-label\">";
@@ -1038,7 +1038,6 @@
       var _ref = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {},
           _ref$doc = _ref.doc,
           doc = _ref$doc === undefined ? document : _ref$doc;
-      console.log("_REF: ", _ref);
       // Create the DOM.
       var main = strToHTML(template({ items: model.children, center: center }), doc)[0];
       parent.appendChild(main);
@@ -1378,8 +1377,8 @@
     });
 
     var getAngleRange = function getAngleRange(items) {
-      console.log("ITEMS: ", items);
-      return items.length > 4 ? 59: 90;
+      // console.log("ITEMS: ", items);
+      return items.length > 4 ? 45: 90;
     };
 
     /**
