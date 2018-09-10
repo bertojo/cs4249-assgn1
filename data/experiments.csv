@@ -9,15 +9,15 @@ Marking,3,Jeans,4,true
 Marking,3,Beef,4,true
 Marking,3,Nike,4,true
 
-Marking,1,Movie,6,true
-Marking,1,Clothing,6,true
-Marking,1,Animal,6,true
-Marking,2,Comedy,6,true
-Marking,2,Musical,6,true
-Marking,2,Shoes,6,true
-Marking,3,Soldier,6,true
-Marking,3,Cabbage,6,true
-Marking,3,Mastercard,6,true
+Marking,1,Movie,8,true
+Marking,1,Clothing,8,true
+Marking,1,Animal,8,true
+Marking,2,Comedy,8,true
+Marking,2,Musical,8,true
+Marking,2,Shoes,8,true
+Marking,3,Soldier,8,true
+Marking,3,Cabbage,8,true
+Marking,3,Mastercard,8,true
 
 Marking,1,Food,4,false
 Marking,1,Company,4,false
@@ -29,15 +29,15 @@ Marking,3,Walnut,4,false
 Marking,3,Hersheys,4,false
 Marking,3,Hamster,4,false
 
-Marking,1,Movie,6,false
-Marking,1,Job,6,false
-Marking,1,Food,6,false
-Marking,2,Horror,6,false
-Marking,2,Insect,6,false
-Marking,2,Superhero,6,false
-Marking,3,Doctor,6,false
-Marking,3,Beanie,6,false
-Marking,3,Star Wars,6,false
+Marking,1,Movie,8,false
+Marking,1,Job,8,false
+Marking,1,Food,8,false
+Marking,2,Horror,8,false
+Marking,2,Insect,8,false
+Marking,2,Superhero,8,false
+Marking,3,Doctor,8,false
+Marking,3,Beanie,8,false
+Marking,3,Star Wars,8,false
 
 Radial,1,Animal,4,true
 Radial,1,Food,4,true
@@ -49,32 +49,32 @@ Radial,3,GoPro,4,true
 Radial,3,Facebook,4,true
 Radial,3,Jacket,4,true
 
-Radial,1,Job,6,true
-Radial,1,Clothing,6,true
-Radial,1,Animals,6,true
-Radial,2,Fruit,6,true
-Radial,2,Top,6,true
-Radial,2,Musical,6,true
-Radial,3,Wheat,6,true
-Radial,3,Painter,6,true
-Radial,3,Wall-e,6,true
+Radial,1,Job,8,true
+Radial,1,Clothing,8,true
+Radial,1,Animals,8,true
+Radial,2,Fruit,8,true
+Radial,2,Top,8,true
+Radial,2,Musical,8,true
+Radial,3,Wheat,8,true
+Radial,3,Painter,8,true
+Radial,3,Wall-e,8,true
 
 Radial,1,Food,4,false
 Radial,1,Animal,4,false
 Radial,1,Company,4,false
 Radial,2,Reptile,4,false
 Radial,2,Bottom,4,false
-Radial,2,Grain,4,false
-Radial,3,Rice,4,false
-Radial,3,Slippers,4,false
+Radial,2,Meat,4,false
+Radial,3,Pork,4,false
+Radial,3,Boots,4,false
 Radial,3,Gucci,4,false
 
-Radial,1,Food,6,false
-Radial,1,Movie,6,false
-Radial,1,Job,6,false
-Radial,2,Medical,6,false
-Radial,2,Vegetable,6,false
-Radial,2,Horror,6,false
-Radial,3,Teacher,6,false
-Radial,3,Housefly,6,false
-Radial,3,Reporter,6,false
+Radial,1,Food,8,false
+Radial,1,Movie,8,false
+Radial,1,Job,8,false
+Radial,2,Medical,8,false
+Radial,2,Vegetable,8,false
+Radial,2,Horror,8,false
+Radial,3,Teacher,8,false
+Radial,3,Housefly,8,false
+Radial,3,Reporter,8,false
