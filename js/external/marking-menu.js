@@ -36,7 +36,6 @@
      * @return {number} The (signed) delta between the two angles (in degrees).
      */
     var deltaAngle = function deltaAngle(alpha, beta) {
-      // console.log("TESTING 123: ", mod(beta - alpha + 180, 360) - 180);
       return mod(beta - alpha + 180, 360) - 180;
     };
 
@@ -73,7 +72,6 @@
       var adjustedCos = Math.max(-1, Math.min(1, cos));
       var angleABC = source(Math.acos(adjustedCos));
       // Round the angle to avoid rounding issues.
-      // console.log("Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING: ",  Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING);
       return Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING;
     };
 
@@ -1377,7 +1375,6 @@
     });
 
     var getAngleRange = function getAngleRange(items) {
-      // console.log("ITEMS: ", items);
       return items.length > 4 ? 45: 90;
     };
 
@@ -1460,7 +1457,6 @@
 
       MMItem.prototype.getMaxBreadth = function getMaxBreadth() {
         return this.isLeaf() ? 0 : Math.max.apply(Math, [this.children.length].concat(this.children.map(function (child) {
-          console.log("CHILD.GETMAXBREADTH: ", child.getMaxBreadth());
           return child.getMaxBreadth();
         })));
       };

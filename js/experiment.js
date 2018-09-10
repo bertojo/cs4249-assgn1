@@ -59,10 +59,8 @@ function initExperiment() {
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
 		if (records[i].trim() == "") {
-			// console.log("HERE: ", i);
 			continue;
 		}
-		// console.log("TEST: ", i);
 		var cells = records[i].split(",");
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
@@ -126,9 +124,6 @@ function nextTrial() {
 	markingNumSelectsInCurrentTrial = 0;
 	
 	if (currentTrial <= numTrials) {
-		// console.log("TRIAL: ", trialsData[currentTrial]);
-		// console.log("TRIAL: ", trialsData[currentTrial] == null);
-		// console.log("TRIAL: ", typeof(trialsData[currentTrial]));
 		if (!trialsData[currentTrial]) {
 			currentTrial++;
 		}
@@ -161,30 +156,25 @@ function nextTrial() {
 			console.log("BREADTH: ", menuBreadth);
 			console.log("DEPTH: ", menuDepth);
 			if (menuDepth == 1 && menuBreadth == 4) {
-				// console.log("MARKING B4D1");
 				menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 2 && menuBreadth == 4) {
-				// console.log("MARKING B4D2");
 				menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 3 && menuBreadth == 4) {
-				// console.log("MARKING B4D3");
 				menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 1 && menuBreadth == 6) {
-				// console.log("MARKING B6D1");
+				console.log("MARKING B6D1");
 				menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 2 && menuBreadth == 6) {
-				// console.log("MARKING B6D1");
+				console.log("MARKING B6D2");
 				menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 3 && menuBreadth == 6) {
-				// console.log("MARKING B6D1");
+				console.log("MARKING B6D3");
 				menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
 			}
 
 			markingMenuSubscription = menu.subscribe(
 				(selection) => {
-					console.log("HERE: ", selection);
 					markingNumSelectsInCurrentTrial++;
-					console.log("HERE 2: ", markingNumSelectsInCurrentTrial);
 					markingMenuOnSelect(selection);
 				}
 			);
@@ -285,7 +275,6 @@ function formatMarkingMenuData(data) {
 
 // Function to start tracking timer on mouse down
 function markingMenuOnMouseDown() {
-	console.log("MARKING MENU DOWN")
 	markingNumSelectsInCurrentTrial++;
 	tracker.startTimer();
 }
@@ -349,9 +338,7 @@ function createRadialMenu(radialMenuL) {
 
 // Toggle radial menu on right click
 function toggleRadialMenu(e) {
-	console.log("A");
 	if (tracker.startTime == null) {
-		console.log("A");
 		if (radialMenuTree != null) {
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
@@ -361,15 +348,12 @@ function toggleRadialMenu(e) {
 			// Start timing once menu appears
 			tracker.startTimer();
 			radialNumSelectsInCurrentTrial = 1;
-			console.log("C: ", radialNumSelectsInCurrentTrial);
 		}
 	} else {
-		console.log("D");
 		// Record previous item
 		tracker.recordSelectedItem(null);
 
 		if (radialMenuTree != null) {
-			console.log("E");
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
 				y: e.clientY
