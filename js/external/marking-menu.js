@@ -36,7 +36,7 @@
      * @return {number} The (signed) delta between the two angles (in degrees).
      */
     var deltaAngle = function deltaAngle(alpha, beta) {
-      console.log("TESTING 123: ", mod(beta - alpha + 180, 360) - 180);
+      // console.log("TESTING 123: ", mod(beta - alpha + 180, 360) - 180);
       return mod(beta - alpha + 180, 360) - 180;
     };
 
@@ -1381,7 +1381,7 @@
 
     var getAngleRange = function getAngleRange(items) {
       console.log("ITEMS: ", items);
-      return items.length > 4 ? 60: 90;
+      return items.length > 4 ? 59: 90;
     };
 
     /**
