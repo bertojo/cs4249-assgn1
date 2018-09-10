@@ -1140,7 +1140,6 @@
        */
       var drawPoint = function drawPoint(_ref2) {
         // Alter coordinated to align with div
-        console.log("POINT RADIUS: ", pointRadius);
     	var x = _ref2[0] - canvas.x,
             y = _ref2[1] - canvas.y;
         
@@ -1464,6 +1463,7 @@
 
       MMItem.prototype.getMaxBreadth = function getMaxBreadth() {
         return this.isLeaf() ? 0 : Math.max.apply(Math, [this.children.length].concat(this.children.map(function (child) {
+          console.log("CHILD.GETMAXBREADTH: ", child.getMaxBreadth());
           return child.getMaxBreadth();
         })));
       };
