@@ -571,7 +571,6 @@
     };
 
     var segmentAngle = function segmentAngle(a, b) {
-      console.log("SEGMENT ANGLE: ", source(Math.atan2(b[1] - a[1], b[0] - a[0])));
       return source(Math.atan2(b[1] - a[1], b[0] - a[0]));
     };
 
@@ -1007,7 +1006,6 @@
             } else {
               var $$l = 0;
               for (var pug_index0 in $$obj) {
-                console.log("HERE 2: ", item);
                 $$l++;
                 var item = $$obj[pug_index0];
                 pug_html = pug_html + "<div" + (" class=\"marking-menu-item\"" + pug.attr("data-item-id", item.id, true, true) + pug.attr("data-item-angle", item.angle, true, true)) + ">";
@@ -1040,7 +1038,7 @@
       var _ref = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {},
           _ref$doc = _ref.doc,
           doc = _ref$doc === undefined ? document : _ref$doc;
-
+      console.log("_REF: ", _ref);
       // Create the DOM.
       var main = strToHTML(template({ items: model.children, center: center }), doc)[0];
       parent.appendChild(main);
