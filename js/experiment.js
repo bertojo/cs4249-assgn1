@@ -287,7 +287,7 @@ function formatMarkingMenuData(data) {
 	for (var key in menuItems) {
 		menuItemsList.push(menuItems[key]);
 	}
-
+	console.log("HERE: ", menuItemsList);
 	return menuItemsList;
 }
 
