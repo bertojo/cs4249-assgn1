@@ -569,6 +569,7 @@
     };
 
     var segmentAngle = function segmentAngle(a, b) {
+      console.log("SEGMENT ANGLE: ", source(Math.atan2(b[1] - a[1], b[0] - a[0])));
       return source(Math.atan2(b[1] - a[1], b[0] - a[0]));
     };
 

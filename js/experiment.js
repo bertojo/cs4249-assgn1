@@ -114,10 +114,9 @@ function loadNextTrial(e) {
 	} else {
 		// Show error
 		$("#targetItem").css("background-color", "red");
+		tracker.attempt++;
 	}
-	
-	
-
+	console.log("TRACKER: ", tracker);
 }
 
 // Move to next trial and record events
@@ -219,9 +218,6 @@ function nextTrial() {
 		tracker.toCsv();
 	}
 }
-
-
-
 
 
 /*Functions related to MarkingMenu*/
