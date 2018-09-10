@@ -161,17 +161,22 @@ function nextTrial() {
 			initializeMarkingMenu();
 
 			if (menuDepth == 1 && menuBreadth == 4) {
+				console.log("MARKING B4D1");
 				menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
-			}
-			else if (menuDepth == 2 && menuBreadth == 4) {
+			} else if (menuDepth == 2 && menuBreadth == 4) {
+				console.log("MARKING B4D2");
 				menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 3 && menuBreadth == 4) {
+				console.log("MARKING B4D3");
 				menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 1 && menuBreadth == 6) {
+				console.log("MARKING B6D1");
 				menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 2 && menuBreadth == 6) {
+				console.log("MARKING B6D1");
 				menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
 			} else if (menuDepth == 3 && menuBreadth == 6) {
+				console.log("MARKING B6D1");
 				menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
 			}
 
@@ -283,6 +288,7 @@ function formatMarkingMenuData(data) {
 
 // Function to start tracking timer on mouse down
 function markingMenuOnMouseDown() {
+	console.log("MARKING MENU DOWN")
 	markingNumSelectsInCurrentTrial++;
 	tracker.startTimer();
 }
