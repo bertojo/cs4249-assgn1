@@ -1140,6 +1140,7 @@
        */
       var drawPoint = function drawPoint(_ref2) {
         // Alter coordinated to align with div
+        console.log("POINT RADIUS: ", pointRadius);
     	var x = _ref2[0] - canvas.x,
             y = _ref2[1] - canvas.y;
         
