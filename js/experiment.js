@@ -160,7 +160,13 @@ function nextTrial() {
 				menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
 			}
 
-			markingMenuSubscription = menu.subscribe((selection) => markingMenuOnSelect(selection));
+			markingMenuSubscription = menu.subscribe(
+				(selection, children) => {
+					console.log("HERE: ", selection);
+					console.log("HERE 2: ", children);
+					markingMenuOnSelect(selection);
+				}
+			);
 
 		} else if (menuType === "Radial") {
 
