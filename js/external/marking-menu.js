@@ -1381,7 +1381,7 @@
 
     var getAngleRange = function getAngleRange(items) {
       console.log("ITEMS: ", items);
-      return items.length > 4 ? 60: 90;
+      return items.length > 4 ? 59: 90;
     };
 
     /**

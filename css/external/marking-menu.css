@@ -103,44 +103,44 @@
 .marking-menu-item[data-item-angle='315'] .marking-menu-label {
   border-bottom-left-radius: 0; }
 
-  .marking-menu-item[data-item-angle='60'] .marking-menu-label {
+  .marking-menu-item[data-item-angle='59'] .marking-menu-label {
     bottom: -84.56854px;
     left: 56.56854px; }
   
-  .marking-menu-item[data-item-angle='60'] .marking-menu-line {
+  .marking-menu-item[data-item-angle='59'] .marking-menu-line {
     transform: rotate(60deg); }
 
-    .marking-menu-item[data-item-angle='120'] .marking-menu-label {
+    .marking-menu-item[data-item-angle='118'] .marking-menu-label {
       bottom: -84.56854px;
       left: 56.56854px; }
     
-    .marking-menu-item[data-item-angle='120'] .marking-menu-line {
+    .marking-menu-item[data-item-angle='118'] .marking-menu-line {
       transform: rotate(120deg); }
 
-      .marking-menu-item[data-item-angle='180'] .marking-menu-label {
+      .marking-menu-item[data-item-angle='177'] .marking-menu-label {
         bottom: -84.56854px;
         left: 56.56854px; }
       
-      .marking-menu-item[data-item-angle='180'] .marking-menu-line {
+      .marking-menu-item[data-item-angle='177'] .marking-menu-line {
         transform: rotate(180deg); }
 
-        .marking-menu-item[data-item-angle='240'] .marking-menu-label {
+        .marking-menu-item[data-item-angle='236'] .marking-menu-label {
           bottom: -84.56854px;
           left: 56.56854px; }
         
-        .marking-menu-item[data-item-angle='240'] .marking-menu-line {
+        .marking-menu-item[data-item-angle='236'] .marking-menu-line {
           transform: rotate(240deg); }
 
-          .marking-menu-item[data-item-angle='300'] .marking-menu-label {
+          .marking-menu-item[data-item-angle='295'] .marking-menu-label {
             bottom: -84.56854px;
             left: 56.56854px; }
           
-          .marking-menu-item[data-item-angle='300'] .marking-menu-line {
+          .marking-menu-item[data-item-angle='295'] .marking-menu-line {
             transform: rotate(300deg); }
 
-            .marking-menu-item[data-item-angle='360'] .marking-menu-label {
+            .marking-menu-item[data-item-angle='354'] .marking-menu-label {
               bottom: -84.56854px;
               left: 56.56854px; }
             
-            .marking-menu-item[data-item-angle='360'] .marking-menu-line {
+            .marking-menu-item[data-item-angle='354'] .marking-menu-line {
               transform: rotate(360deg); }
