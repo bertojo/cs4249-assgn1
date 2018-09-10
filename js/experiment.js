@@ -257,6 +257,7 @@ function formatMarkingMenuData(data) {
 	var records = data.split("\n");
 	var numRecords = records.length;
 	var menuItems = {}
+	console.log("RECORDS: ", records)
 	console.log("NUMRECORDS : ", numRecords);
 
 	// Parse through the records and create individual menu items
@@ -290,6 +291,7 @@ function formatMarkingMenuData(data) {
 		menuItemsList.push(menuItems[key]);
 	}
 	console.log("HERE: ", menuItemsList);
+	console.log("=====================================");
 	return menuItemsList;
 }
 
