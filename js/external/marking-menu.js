@@ -1376,7 +1376,7 @@
     });
 
     var getAngleRange = function getAngleRange(items) {
-      return items.length > 4 ? 45 : 90;
+      return items.length > 4 ? 45 : 60;
     };
 
     /**
