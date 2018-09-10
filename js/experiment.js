@@ -2,9 +2,6 @@
 
 // Location of data files
 const trialsFile = "./data/experiments.csv";
-const menuL1File = "./data/menu_depth_1.csv";
-const menuL2File = "./data/menu_depth_2.csv";
-const menuL3File = "./data/menu_depth_3.csv";
 
 const b4d1 = "./data/b4d1.csv";
 const b4d2 = "./data/b4d2.csv";
@@ -77,27 +74,27 @@ function initExperiment() {
 	}
 
 	// Get Menus
-	var menuData1 = getData(b4d1);
-	var menuData2 = getData(b4d2);
-	var menuData3 = getData(b4d3);
-	var menuData4 = getData(b6d1);
-	var menuData5 = getData(b6d2);
-	var menuData6 = getData(b6d3);
+	var menuDatab4d1 = getData(b4d1);
+	var menuDatab4d2 = getData(b4d2);
+	var menuDatab4d3 = getData(b4d3);
+	var menuDatab6d1 = getData(b6d1);
+	var menuDatab6d2 = getData(b6d2);
+	var menuDatab6d3 = getData(b6d3);
 
 	// Format CSV Menu to respective Menu structures
-	markingMenub4d1 = formatMarkingMenuData(menuData1);
-	markingMenub4d2 = formatMarkingMenuData(menuData2);
-	markingMenub4d3 = formatMarkingMenuData(menuData3);
-	markingMenub6d1 = formatMarkingMenuData(menuData4);
-	markingMenub6d2 = formatMarkingMenuData(menuData5);
-	markingMenub6d3 = formatMarkingMenuData(menuData6);
+	markingMenub4d1 = formatMarkingMenuData(menuDatab4d1);
+	markingMenub4d2 = formatMarkingMenuData(menuDatab4d2);
+	markingMenub4d3 = formatMarkingMenuData(menuDatab4d3);
+	markingMenub6d1 = formatMarkingMenuData(menuDatab6d1);
+	markingMenub6d2 = formatMarkingMenuData(menuDatab6d2);
+	markingMenub6d3 = formatMarkingMenuData(menuDatab6d3);
 
-	radialMenub4d1 = formatRadialMenuData(menuData1);
-	radialMenub4d2 = formatRadialMenuData(menuData2);
-	radialMenub4d3 = formatRadialMenuData(menuData3);
-	radialMenub6d1 = formatRadialMenuData(menuData4);
-	radialMenub6d2 = formatRadialMenuData(menuData5);
-	radialMenub6d3 = formatRadialMenuData(menuData6);
+	radialMenub4d1 = formatRadialMenuData(menuDatab4d1);
+	radialMenub4d2 = formatRadialMenuData(menuDatab4d2);
+	radialMenub4d3 = formatRadialMenuData(menuDatab4d3);
+	radialMenub6d1 = formatRadialMenuData(menuDatab6d1);
+	radialMenub6d2 = formatRadialMenuData(menuDatab6d2);
+	radialMenub6d3 = formatRadialMenuData(menuDatab6d3);
 
 	//Start the first trial
 	nextTrial();
@@ -155,22 +152,40 @@ function nextTrial() {
 			initializeMarkingMenu();
 			console.log("BREADTH: ", menuBreadth);
 			console.log("DEPTH: ", menuDepth);
-			if (menuDepth == 1 && menuBreadth == 4) {
-				menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
-			} else if (menuDepth == 2 && menuBreadth == 4) {
-				menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
-			} else if (menuDepth == 3 && menuBreadth == 4) {
-				menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
-			} else if (menuDepth == 1 && menuBreadth == 6) {
-				console.log("MARKING B6D1");
-				menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
-			} else if (menuDepth == 2 && menuBreadth == 6) {
-				console.log("MARKING B6D2");
-				menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
-			} else if (menuDepth == 3 && menuBreadth == 6) {
-				console.log("MARKING B6D3");
-				menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
+
+			if (menuBreadth == 4) {
+				if (menuDepth == 1) {
+					menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
+				} else if (menuDepth == 2) {
+					menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
+				} else if (menuDepth == 3) {
+					menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
+				}
+			} else if (menuBreadth == 6) {
+				if (menuDepth == 1) {
+					menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
+				} else if (menuDepth == 2) {
+					menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
+				} else if (menuDepth == 3) {
+					menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
+				}
 			}
+			// if (menuDepth == 1 && menuBreadth == 4) {
+			// 	menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
+			// } else if (menuDepth == 2 && menuBreadth == 4) {
+			// 	menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
+			// } else if (menuDepth == 3 && menuBreadth == 4) {
+			// 	menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
+			// } else if (menuDepth == 1 && menuBreadth == 6) {
+			// 	console.log("MARKING B6D1");
+			// 	menu = MarkingMenu(markingMenub6d1, document.getElementById('marking-menu-container'));
+			// } else if (menuDepth == 2 && menuBreadth == 6) {
+			// 	console.log("MARKING B6D2");
+			// 	menu = MarkingMenu(markingMenub6d2, document.getElementById('marking-menu-container'));
+			// } else if (menuDepth == 3 && menuBreadth == 6) {
+			// 	console.log("MARKING B6D3");
+			// 	menu = MarkingMenu(markingMenub6d3, document.getElementById('marking-menu-container'));
+			// }
 
 			markingMenuSubscription = menu.subscribe(
 				(selection) => {
