@@ -72,6 +72,7 @@
       var adjustedCos = Math.max(-1, Math.min(1, cos));
       var angleABC = source(Math.acos(adjustedCos));
       // Round the angle to avoid rounding issues.
+      console.log("Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING: ",  Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING);
       return Math.round(angleABC / ANGLE_ROUNDING) * ANGLE_ROUNDING;
     };
 
