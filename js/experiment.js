@@ -1,6 +1,7 @@
 'use strict';
 
 // Location of data files
+// 8 participants with 8 different ordering of tasks
 const ordering1 = "./data/experiment1.csv";
 const ordering2 = "./data/experiment2.csv";
 const ordering3 = "./data/experiment3.csv";
@@ -10,6 +11,7 @@ const ordering6 = "./data/experiment6.csv";
 const ordering7 = "./data/experiment7.csv";
 const ordering8 = "./data/experiment8.csv";
 
+// Menu data
 const b4d1 = "./data/b4d1.csv";
 const b4d2 = "./data/b4d2.csv";
 const b4d3 = "./data/b4d3.csv";
@@ -53,7 +55,7 @@ function getData(relativePath) {
 
 // Loads the CSV data files on page load and store it to global variables
 function initExperiment() {
-
+	// To determine participant's ordering of trials based on the participant's number.
 	var url = window.location.href;
 	let splitUrl = url.split("?");
 	var participantNum = parseInt(splitUrl[splitUrl.length - 1]);
@@ -105,6 +107,7 @@ function initExperiment() {
 		var targetItem = cells[2].trim();
 		var menuBreadth = cells[3].trim();
 		var isUsingMouse = cells[4].trim();
+		// Control Device value used to determine whether a mouse or trackpad should be used
 		trialsData[i] = {
 			'Menu Type': menuType,
 			'Menu Depth': menuDepth,
@@ -144,6 +147,9 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
+	
+	// Participant cannot progress until the correct answer is chosen. However, we record the tries.
+	// Participants who completed it on the firs try would just have a single entry to signify that they completed it satisfactorily once
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
 		nextTrial();
@@ -151,7 +157,7 @@ function loadNextTrial(e) {
 		// Show error
 		$("#targetItem").css("background-color", "red");
 	}
-	console.log("TRACKER: ", tracker);
+	// console.log("TRACKER: ", tracker);
 }
 
 // Move to next trial and record events
@@ -173,7 +179,7 @@ function nextTrial() {
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
 		document.getElementById("controlDevice").innerHTML = isUsingMouse;
-		document.getElementById("menuBreadth").innerHTML = menuBreadth;
+		document.getElementById("menuBreadth").innerHTML = menuBreadth;  // Have an extra IV to better test the primary IV.
 
 		tracker.newTrial();
 		tracker.trial = currentTrial;
@@ -184,9 +190,7 @@ function nextTrial() {
 		tracker.menuBreadth = menuBreadth;
 
 		if (menuType === "Marking") {
-
-			initializeMarkingMenu();;
-
+			initializeMarkingMenu();
 			if (menuBreadth == 4) {
 				if (menuDepth == 1) {
 					menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
@@ -229,10 +233,7 @@ function nextTrial() {
 			} else if (menuDepth == 3 && menuBreadth == 8) {
 				menu = createRadialMenu(radialMenub8d3);
 			}
-
-
 		}
-
 		currentTrial++;
 	} else {
 		// Download CSV Results
