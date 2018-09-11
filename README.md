@@ -40,6 +40,7 @@ The ordering for the first participant will then be loaded.
 - Participants have to correctly choose the target item to proceed. This is to measure attempts and first time success rate as DV
 - Breadth of 4 and 8 for the menu is implemented. Originally wanted to add breadth of 6, but the changes to the library were too significant.
 - Slight tweaks to the log file like "Elapsed Time" = End Time - Start Time, for convenience.
+- Basic modal form for pre and post surveys. Template taken from w3schools.com
 
  ## Credits
 This repository contains modified implementations of menus from the original contributors listed below.
