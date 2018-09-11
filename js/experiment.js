@@ -151,6 +151,7 @@ function loadNextTrial(e) {
 
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
+		tracker.recordTrial();
 		nextTrial();
 	} else {
 		// Show error
@@ -322,7 +323,7 @@ function markingMenuOnMouseDown() {
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem) {
-	markingNumSelectsInCurrentTrial++;
+	// markingNumSelectsInCurrentTrial++;
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
