@@ -50,7 +50,10 @@ function getData(relativePath) {
 function initExperiment() {
 
 	var url = window.location.href;
+	console.log("URL: ", url);
 	let splitUrl = url.split("/");
+	console.log("splitUrl: ", splitUrl);
+	console.log("splitUrl[splitUrl.length - 1]: ", splitUrl[splitUrl.length - 1]);
 	var participantNum = parseInt(splitUrl[splitUrl.length - 1]);
 	console.log("participantNum: ", participantNum);
 	// Get Trails (Tasks for users)
