@@ -47,6 +47,7 @@ class ExperimentTracker {
 	}
 
 	newTrial() {
+		this.numActions = 0;
 		this.attempt = 1;
 	}
 
