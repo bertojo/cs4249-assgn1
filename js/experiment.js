@@ -146,11 +146,12 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
+	console.log("markingNumSelectsInCurrentTrial 1: ", markingNumSelectsInCurrentTrial);
 
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
 		if (menuType == "Marking") {
-			console.log("markingNumSelectsInCurrentTrial: ", markingNumSelectsInCurrentTrial);
+			console.log("markingNumSelectsInCurrentTrial 2: ", markingNumSelectsInCurrentTrial);
 			tracker.recordNumActions(markingNumSelectsInCurrentTrial);
 		} else {
 			console.log("radialNumSelectsInCurrentTrial: ", radialNumSelectsInCurrentTrial);
