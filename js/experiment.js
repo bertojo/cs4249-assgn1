@@ -151,7 +151,12 @@ function loadNextTrial(e) {
 
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
-		// tracker.recordTrial();
+		if (menuType == "Marking") {
+			tracker.recordNumActions(markingNumSelectsInCurrentTrial);
+		} else {
+			tracker.recordNumActions(radialNumSelectsInCurrentTrial);
+		}
+		
 		nextTrial();
 	} else {
 		// Show error
@@ -389,7 +394,7 @@ function toggleRadialMenu(e) {
 			
 			// Start timing once menu appears
 			tracker.startTimer();
-			radialNumSelectsInCurrentTrial = 1;
+			radialNumSelectsInCurrentTrial++;
 		}
 	} else {
 		// Record previous item

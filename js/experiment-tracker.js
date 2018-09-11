@@ -42,6 +42,10 @@ class ExperimentTracker {
 		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime]);
 	}
 
+	recordNumActions(num) {
+		this.numActions = num;
+	}
+
 	newTrial() {
 		this.attempt = 1;
 	}
