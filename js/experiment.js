@@ -146,14 +146,16 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
-	// if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
+	console.log("markingNumSelectsInCurrentTrial: ", markingNumSelectsInCurrentTrial);
+	console.log("radialNumSelectsInCurrentTrial: ", radialNumSelectsInCurrentTrial);
+
+	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
 		nextTrial();
-	// } else {
-	// 	// Show error
-	// 	$("#targetItem").css("background-color", "red");
-	// 	tracker.attempt++;
-	// }
+	} else {
+		// Show error
+		$("#targetItem").css("background-color", "red");
+	}
 	console.log("TRACKER: ", tracker);
 }
 
