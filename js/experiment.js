@@ -147,11 +147,11 @@ function initExperiment() {
 function loadNextTrial(e) {
 	e.preventDefault();
 	console.log("markingNumSelectsInCurrentTrial 1: ", markingNumSelectsInCurrentTrial);
-	console.log("menuType: ", menuType);
+	console.log("tracker.menuType: ", tracker.menuType);
 
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
-		if (menuType === "Marking") {
+		if (tracker.menuType === "Marking") {
 			console.log("markingNumSelectsInCurrentTrial 2: ", markingNumSelectsInCurrentTrial);
 			tracker.recordNumActions(markingNumSelectsInCurrentTrial);
 		} else {
