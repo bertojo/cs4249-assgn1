@@ -41,8 +41,6 @@ var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
 
-var radialNumSelectsInCurrentTrial = 0;
-var markingNumSelectsInCurrentTrial = 0;
 
 // Load CSV files from data and return text
 function getData(relativePath) {
@@ -148,14 +146,6 @@ function loadNextTrial(e) {
 	e.preventDefault();
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
-		// if (tracker.menuType === "Marking") {
-		// 	console.log("markingNumSelectsInCurrentTrial: ", markingNumSelectsInCurrentTrial);
-		// 	tracker.recordNumActions(markingNumSelectsInCurrentTrial);
-		// } else {
-		// 	console.log("radialNumSelectsInCurrentTrial: ", radialNumSelectsInCurrentTrial);
-		// 	tracker.recordNumActions(radialNumSelectsInCurrentTrial);
-		// }
-		
 		nextTrial();
 	} else {
 		// Show error
@@ -166,10 +156,6 @@ function loadNextTrial(e) {
 
 // Move to next trial and record events
 function nextTrial() {
-	// Reset action counter
-	radialNumSelectsInCurrentTrial = 0;
-	markingNumSelectsInCurrentTrial = 0;
-	
 	if (currentTrial <= numTrials) {
 		if (!trialsData[currentTrial]) {
 			currentTrial++;
@@ -221,8 +207,6 @@ function nextTrial() {
 
 			markingMenuSubscription = menu.subscribe(
 				(selection) => {
-					console.log("SELECTION: ", selection)
-					markingNumSelectsInCurrentTrial++;
 					markingMenuOnSelect(selection);
 				}
 			);
@@ -322,13 +306,11 @@ function formatMarkingMenuData(data) {
 
 // Function to start tracking timer on mouse down
 function markingMenuOnMouseDown() {
-	markingNumSelectsInCurrentTrial++;
 	tracker.startTimer();
 }
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem) {
-	tracker.recordNumActions(markingNumSelectsInCurrentTrial);
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
@@ -394,7 +376,6 @@ function toggleRadialMenu(e) {
 			
 			// Start timing once menu appears
 			tracker.startTimer();
-			radialNumSelectsInCurrentTrial++;
 		}
 	} else {
 		// Record previous item
@@ -415,17 +396,11 @@ function toggleRadialMenu(e) {
 
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
-	radialNumSelectsInCurrentTrial++;
-	tracker.recordNumActions(radialNumSelectsInCurrentTrial);
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
 
 	document.getElementById("selectedItem").innerHTML = this.id;
-}
-
-function radialSelectionCount() {
-	radialNumSelectsInCurrentTrial++;
 }
 
 //Formats csv menu data in the structure accepted by radial menu
@@ -447,9 +422,7 @@ function formatRadialMenuData(data) {
 			'id': label,
 			'fill': "#39d",
 			'name': label,
-			'_children': [],
-			'callbakc': radialSelectionCount
-		};
+			'_children': []		};
 	}
 
 	for (var i = numRecords - 1; i >= 1; i--) {
