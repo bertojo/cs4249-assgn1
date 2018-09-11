@@ -25,6 +25,12 @@ class ExperimentTracker {
 		this.softwares = null;
 		this.experienceMarkingMenu = null;
 		this.experienceRadialMenu = null;
+		this.markingConfidence = null;
+		this.radialConfidence = null;
+		this.markingDifficulty = null;
+		this.radialDifficulty = null;
+		this.fasterOpinion = null;
+		this.accurateOpinion = null;
 	}
 	
 	resetTimers(){

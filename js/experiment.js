@@ -290,11 +290,17 @@ function getPreSurveyData() {
 	tracker.experienceMarkingMenu = document.getElementById("hours-marking-menu").value;
 	tracker.experienceRadialMenu = document.getElementById("hours-radial-menu").value;
 	tracker.softwares = document.getElementById("software").value;
-	console.log("TRACKER: ", tracker);
+	console.log("TRACKER 1: ", tracker);
 }
 
 function getPostSurveyData() {
-	
+	tracker.markingConfidence = document.getElementById("marking-confidence").value;
+	tracker.radialConfidence = document.getElementById("radial-confidence").value;
+	tracker.markingDifficulty = document.getElementById("marking-difficulty").value;
+	tracker.radialDifficulty = document.getElementById("radial-difficulty").value;
+	tracker.fasterOpinion = document.getElementById("faster-opinion").value;
+	tracker.accurateOpinion = document.getElementById("accurate-opinion").value;
+	console.log("TRACKER 2: ", tracker);
 }
 
 /*Functions related to MarkingMenu*/
