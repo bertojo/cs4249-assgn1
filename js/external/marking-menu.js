@@ -995,7 +995,6 @@
             if ('number' == typeof $$obj.length) {
               for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
                 var item = $$obj[pug_index0];
-                // console.log("HERE 1: ", item);
                 pug_html = pug_html + "<div" + (" class=\"marking-menu-item\"" + pug.attr("data-item-id", item.id, true, true) + pug.attr("data-item-angle", item.angle, true, true)) + ">";
                 pug_html = pug_html + "<div class=\"marking-menu-line\"></div>";
                 pug_html = pug_html + "<div class=\"marking-menu-label\">";

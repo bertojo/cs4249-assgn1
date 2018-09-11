@@ -406,11 +406,9 @@ module.exports = (function d3_sunburst_menu(tree, n, container) {
 
         d3.select("#radialmenu").selectAll("g")
             .on("click", function(n) {
-                // console.log("TEST 1");
                 this.setAttribute("class", "menuitem click");
             })
             .on("mouseout", function(n) {
-                // console.log("TEST 2");
                 this.setAttribute("class", "menuitem");
             });
 
