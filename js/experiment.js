@@ -49,6 +49,9 @@ function getData(relativePath) {
 // Loads the CSV data files on page load and store it to global variables
 function initExperiment() {
 
+	var url = window.location.href;
+	console.log("URL: ", url);
+
 	// Get Trails (Tasks for users)
 	var data = getData(trialsFile);
 
@@ -149,9 +152,7 @@ function nextTrial() {
 
 		if (menuType === "Marking") {
 
-			initializeMarkingMenu();
-			console.log("BREADTH: ", menuBreadth);
-			console.log("DEPTH: ", menuDepth);
+			initializeMarkingMenu();;
 
 			if (menuBreadth == 4) {
 				if (menuDepth == 1) {
@@ -164,13 +165,10 @@ function nextTrial() {
 			} else if (menuBreadth == 8) {
 				if (menuDepth == 1) {
 					menu = MarkingMenu(markingMenub8d1, document.getElementById('marking-menu-container'));
-					console.log("HERE 1: ", menu);
 				} else if (menuDepth == 2) {
 					menu = MarkingMenu(markingMenub8d2, document.getElementById('marking-menu-container'));
-					console.log("HERE 2: ", menu);
 				} else if (menuDepth == 3) {
 					menu = MarkingMenu(markingMenub8d3, document.getElementById('marking-menu-container'));
-					console.log("HERE 3: ", menu);
 				}
 			}
 			// if (menuDepth == 1 && menuBreadth == 4) {
