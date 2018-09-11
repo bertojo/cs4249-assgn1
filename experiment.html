@@ -24,6 +24,10 @@
 <body onload="initExperiment()">
 
     <!-- State Div -->
+    <div class="row">
+        <button id="preSurveyBtn">Pre Survey</button>
+        <button id="postSurveyBtn">Post Survey</button>
+    </div>
     <div class="row" id="state-container">
         <div class="cellstate">
             <span class="label label-primary">Trial</span>
@@ -63,12 +67,27 @@
     <div class="row" id="interaction-container">
     </div>
     
-    <button id="myBtn">Open Modal</button>
     <div id="pre-survey" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <div>Pre survey</div>
+          <div class="form">
+            Full name: <input type="text" name="FullName" id="fullName"><br>
+            Gender: <input type="text" name="FullName" id="gender"><br>
+            Occupation: <input type="text" name="FullName" id="occupation"><br>
+            Age: <input type="text" name="FullName" id="age"><br>
+            Highest Level of education: <input type="text" name="FullName" id="education"><br>
+            Masterhand: <input type="text" name="FullName" id="masterhand"><br>
+          </div>
+        </div>
+    </div>
+
+    <div id="post-survey" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Post survey</p>
         </div>
     </div>
 

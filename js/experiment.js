@@ -45,29 +45,35 @@ var radialMenuSvg = null;
 
 // Get the modal
 var preSurveyModal = document.getElementById('pre-survey');
+var postSurveyModal = document.getElementById('post-survey');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var preBtn = document.getElementById("preSurveyBtn");
+var postBtn = document.getElementById("postSurveyBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var preClose = document.getElementsByClassName("close")[0];
+var postClose = document.getElementsByClassName("close")[1];
+
 
 // When the user clicks on the button, open the modal 
-btn.onclick = function() {
+preBtn.onclick = function() {
     preSurveyModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    preSurveyModal.style.display = "none";
+postBtn.onclick = function() {
+    postSurveyModal.style.display = "block";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        preSurveyModal.style.display = "none";
-    }
+// When the user clicks on <span> (x), close the modal
+preClose.onclick = function() {
+	preSurveyModal.style.display = "none";
 }
+
+postClose.onclick = function() {
+	postSurveyModal.style.display = "none";
+}
+
 
 
 
