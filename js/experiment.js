@@ -422,7 +422,8 @@ function formatRadialMenuData(data) {
 			'id': label,
 			'fill': "#39d",
 			'name': label,
-			'_children': []		};
+			'_children': []
+		};
 	}
 
 	for (var i = numRecords - 1; i >= 1; i--) {
