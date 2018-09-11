@@ -33,13 +33,13 @@ class ExperimentTracker {
 
 	stopTimer() {
 		this.endTime = Date.now();
-		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime]);
+		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime, this.numActions]);
 		this.resetTimers();
 		this.attempt++;
 	}
 
 	recordTrial() {
-		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime]);
+		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime, this.numActions]);
 	}
 
 	recordNumActions(num) {
