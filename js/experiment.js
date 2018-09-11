@@ -151,7 +151,7 @@ function loadNextTrial(e) {
 
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
-		tracker.recordTrial();
+		// tracker.recordTrial();
 		nextTrial();
 	} else {
 		// Show error
