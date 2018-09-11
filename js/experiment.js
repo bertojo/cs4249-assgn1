@@ -182,14 +182,14 @@ function loadNextTrial(e) {
 	e.preventDefault();
 	
 	// Participant cannot progress until the correct answer is chosen. However, we record the tries.
-	// Participants who completed it on the firs try would just have a single entry to signify that they completed it satisfactorily once
-	// if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
+	// Participants who completed it on the first try would just have a single entry to signify that they completed it satisfactorily once
+	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
 		nextTrial();
-	// } else {
-	// 	// Show error
-	// 	$("#targetItem").css("background-color", "red");
-	// }
+	} else {
+		// Show error
+		$("#targetItem").css("background-color", "red");
+	}
 	// console.log("TRACKER: ", tracker);
 }
 
