@@ -274,6 +274,7 @@ function nextTrial() {
 		nextButton.innerHTML = "Done";
 		getPreSurveyData();
 		getPostSurveyData();
+		tracker.stopTimer();
 		tracker.toCsv();
 	}
 }
