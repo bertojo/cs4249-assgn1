@@ -274,7 +274,7 @@ function nextTrial() {
 		nextButton.innerHTML = "Done";
 		getPreSurveyData();
 		getPostSurveyData();
-		tracker.stopTimer();
+		tracker.pushEntry();
 		tracker.toCsv();
 	}
 }
@@ -291,7 +291,6 @@ function getPreSurveyData() {
 	tracker.experienceMarkingMenu = document.getElementById("hours-marking-menu").value;
 	tracker.experienceRadialMenu = document.getElementById("hours-radial-menu").value;
 	tracker.softwares = document.getElementById("software").value;
-	console.log("TRACKER 1: ", tracker);
 }
 
 function getPostSurveyData() {
@@ -301,7 +300,6 @@ function getPostSurveyData() {
 	tracker.radialDifficulty = document.getElementById("radial-difficulty").value;
 	tracker.fasterOpinion = document.getElementById("faster-opinion").value;
 	tracker.accurateOpinion = document.getElementById("accurate-opinion").value;
-	console.log("TRACKER 2: ", tracker);
 }
 
 /*Functions related to MarkingMenu*/

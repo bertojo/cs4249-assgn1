@@ -54,6 +54,10 @@ class ExperimentTracker {
 		this.attempt++;
 	}
 
+	pushEntry() {
+		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime, this.name, this.age, this.gender, this.education, this.masterhand, this.windowsOrMac, this.computerUsage, this.controlDevicePreference, this.softwares, this.experienceMarkingMenu, this.experienceRadialMenu, this.markingConfidence, this.radialConfidence, this.markingDifficulty, this.radialDifficulty, this.fasterOpinion, this.accurateOpinion]);
+	}
+
 	newTrial() {
 		this.attempt = 1;
 	}
