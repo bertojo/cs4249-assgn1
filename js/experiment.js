@@ -1,7 +1,7 @@
 'use strict';
 
 // Location of data files
-const trialsFile = "./data/experiments.csv";
+const trialsFile = "./data/experiment1.csv";
 
 const b4d1 = "./data/b4d1.csv";
 const b4d2 = "./data/b4d2.csv";
