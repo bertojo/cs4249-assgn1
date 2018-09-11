@@ -14,7 +14,6 @@ class ExperimentTracker {
 		this.selectedItem = null;
 		this.startTime = null;
 		this.endTime = null;
-		this.numActions = 0;
 	}
 	
 	resetTimers(){
@@ -33,26 +32,21 @@ class ExperimentTracker {
 
 	stopTimer() {
 		this.endTime = Date.now();
-		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime, this.numActions]);
+		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime]);
 		this.resetTimers();
 		this.attempt++;
 	}
 
 	recordTrial() {
-		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime, this.numActions]);
-	}
-
-	recordNumActions(num) {
-		this.numActions = num;
+		this.trials.push([this.trial, this.attempt, this.menuType, this.menuDepth, this.menuBreadth, this.isUsingMouse, this.targetItem, this.selectedItem, this.startTime, this.endTime, this.endTime - this.startTime]);
 	}
 
 	newTrial() {
-		this.numActions = 0;
 		this.attempt = 1;
 	}
 
 	toCsv() {
-		var csvFile = "Trial,Attempt,Menu Type,Menu Depth, Menu Breadth, Using Mouse,Target Item,Selected Item,Start Time, End Time, Elapsed Time, Number of Actions\n";
+		var csvFile = "Trial,Attempt,Menu Type,Menu Depth, Menu Breadth, Using Mouse,Target Item,Selected Item,Start Time, End Time, Elapsed Time\n";
 
 
 		for (var i = 0; i < this.trials.length; i++) {
