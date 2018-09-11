@@ -50,10 +50,16 @@ function getData(relativePath) {
 function initExperiment() {
 
 	var url = window.location.href;
-	console.log("URL: ", url);
-
+	let splitUrl = url.split("/");
+	var participantNum = parseInt(splitUrl[splitUrl.length - 1]);
+	console.log("participantNum: ", participantNum);
 	// Get Trails (Tasks for users)
-	var data = getData(trialsFile);
+	var data = null
+	switch (participantNum) {
+		case 1:
+			data = getData(trialsFile)
+			break;
+	}
 
 	var records = data.split("\n");
 	numTrials = records.length - 1;
@@ -171,22 +177,6 @@ function nextTrial() {
 					menu = MarkingMenu(markingMenub8d3, document.getElementById('marking-menu-container'));
 				}
 			}
-			// if (menuDepth == 1 && menuBreadth == 4) {
-			// 	menu = MarkingMenu(markingMenub4d1, document.getElementById('marking-menu-container'));
-			// } else if (menuDepth == 2 && menuBreadth == 4) {
-			// 	menu = MarkingMenu(markingMenub4d2, document.getElementById('marking-menu-container'));
-			// } else if (menuDepth == 3 && menuBreadth == 4) {
-			// 	menu = MarkingMenu(markingMenub4d3, document.getElementById('marking-menu-container'));
-			// } else if (menuDepth == 1 && menuBreadth == 8) {
-			// 	console.log("MARKING B8D1");
-			// 	menu = MarkingMenu(markingMenub8d1, document.getElementById('marking-menu-container'));
-			// } else if (menuDepth == 2 && menuBreadth == 8) {
-			// 	console.log("MARKING B8D2");
-			// 	menu = MarkingMenu(markingMenub8d2, document.getElementById('marking-menu-container'));
-			// } else if (menuDepth == 3 && menuBreadth == 8) {
-			// 	console.log("MARKING B8D3");
-			// 	menu = MarkingMenu(markingMenub8d3, document.getElementById('marking-menu-container'));
-			// }
 
 			markingMenuSubscription = menu.subscribe(
 				(selection) => {
@@ -255,8 +245,6 @@ function formatMarkingMenuData(data) {
 	var records = data.split("\n");
 	var numRecords = records.length;
 	var menuItems = {}
-	console.log("RECORDS: ", records)
-	console.log("NUMRECORDS : ", numRecords);
 
 	// Parse through the records and create individual menu items
 	for (var i = 1; i < numRecords; i++) {
@@ -268,7 +256,6 @@ function formatMarkingMenuData(data) {
 			'children': []
 		};
 	}
-	console.log("MENU ITEMS: ", menuItems);
 
 	for (var i = numRecords - 1; i >= 1; i--) {
 		var items = records[i].split(',');
@@ -288,8 +275,6 @@ function formatMarkingMenuData(data) {
 	for (var key in menuItems) {
 		menuItemsList.push(menuItems[key]);
 	}
-	console.log("HERE: ", menuItemsList);
-	console.log("=====================================");
 	return menuItemsList;
 }
 
