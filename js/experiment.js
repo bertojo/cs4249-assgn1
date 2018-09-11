@@ -221,6 +221,7 @@ function nextTrial() {
 
 			markingMenuSubscription = menu.subscribe(
 				(selection) => {
+					console.log("SELECTION: ", selection)
 					markingNumSelectsInCurrentTrial++;
 					markingMenuOnSelect(selection);
 				}
@@ -423,6 +424,10 @@ function radialMenuOnSelect() {
 	document.getElementById("selectedItem").innerHTML = this.id;
 }
 
+function radialSelectionCount() {
+	radialNumSelectsInCurrentTrial++;
+}
+
 //Formats csv menu data in the structure accepted by radial menu
 // Assumes menu csv is sorted by Id and Parent both Ascending
 function formatRadialMenuData(data) {
@@ -442,7 +447,8 @@ function formatRadialMenuData(data) {
 			'id': label,
 			'fill': "#39d",
 			'name': label,
-			'_children': []
+			'_children': [],
+			'callbakc': radialSelectionCount
 		};
 	}
 
