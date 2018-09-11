@@ -1,7 +1,14 @@
 'use strict';
 
 // Location of data files
-const trialsFile = "./data/experiment1.csv";
+const ordering1 = "./data/experiment1.csv";
+const ordering2 = "./data/experiment2.csv";
+const ordering3 = "./data/experiment3.csv";
+const ordering4 = "./data/experiment4.csv";
+const ordering5 = "./data/experiment5.csv";
+const ordering6 = "./data/experiment6.csv";
+const ordering7 = "./data/experiment7.csv";
+const ordering8 = "./data/experiment8.csv";
 
 const b4d1 = "./data/b4d1.csv";
 const b4d2 = "./data/b4d2.csv";
@@ -50,17 +57,41 @@ function getData(relativePath) {
 function initExperiment() {
 
 	var url = window.location.href;
-	console.log("URL: ", url);
 	let splitUrl = url.split("?");
-	console.log("splitUrl: ", splitUrl);
-	console.log("splitUrl[splitUrl.length - 1]: ", splitUrl[splitUrl.length - 1]);
 	var participantNum = parseInt(splitUrl[splitUrl.length - 1]);
-	console.log("participantNum: ", participantNum);
 	// Get Trails (Tasks for users)
 	var data = null
 	switch (participantNum) {
 		case 1:
-			data = getData(trialsFile)
+			data = getData(ordering1)
+			break;
+
+		case 2:
+			data = getData(ordering2)
+			break;
+
+		case 3:
+			data = getData(ordering3)
+			break;
+
+		case 4:
+			data = getData(ordering4)
+			break;
+
+		case 5:
+			data = getData(ordering5)
+			break;
+
+		case 6:
+			data = getData(ordering6)
+			break;
+
+		case 7:
+			data = getData(ordering7)
+			break;
+
+		case 8:
+			data = getData(ordering8)
 			break;
 	}
 
