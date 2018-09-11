@@ -272,10 +272,30 @@ function nextTrial() {
 		// Download CSV Results
 		var nextButton = document.getElementById("nextButton");
 		nextButton.innerHTML = "Done";
+		getPreSurveyData();
+		getPostSurveyData();
 		tracker.toCsv();
 	}
 }
 
+function getPreSurveyData() {
+	tracker.name = document.getElementById("fullName").value;
+	tracker.gender = document.getElementById("gender").value;
+	tracker.age = document.getElementById("age").value;
+	tracker.education = document.getElementById("education").value;
+	tracker.masterhand = document.getElementById("masterhand").value;
+	tracker.computerUsage = document.getElementById("computer-usage").value;
+	tracker.windowsOrMac = document.getElementById("windows-or-mac").value;
+	tracker.controlDevicePreference = document.getElementById("control-device").value;
+	tracker.experienceMarkingMenu = document.getElementById("hours-marking-menu").value;
+	tracker.experienceRadialMenu = document.getElementById("hours-radial-menu").value;
+	tracker.softwares = document.getElementById("software").value;
+	console.log("TRACKER: ", tracker);
+}
+
+function getPostSurveyData() {
+	
+}
 
 /*Functions related to MarkingMenu*/
 

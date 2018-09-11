@@ -624,3 +624,16 @@ border-color:transparent;
   text-decoration: none;
   cursor: pointer;
 }
+.qn-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+.left-label {
+  width: 100px;
+  height: auto;
+}
+
+.left-label-long {
+  width: 500px;
+  height: auto;
+}

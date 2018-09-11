@@ -14,6 +14,17 @@ class ExperimentTracker {
 		this.selectedItem = null;
 		this.startTime = null;
 		this.endTime = null;
+		this.name = null;
+		this.age = null;
+		this.gender = null;
+		this.education = null;
+		this.masterhand = null;
+		this.windowsOrMac = null;
+		this.computerUsage = null;
+		this.controlDevicePreference = null;
+		this.softwares = null;
+		this.experienceMarkingMenu = null;
+		this.experienceRadialMenu = null;
 	}
 	
 	resetTimers(){
