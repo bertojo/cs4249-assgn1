@@ -146,18 +146,15 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e) {
 	e.preventDefault();
-	console.log("markingNumSelectsInCurrentTrial 1: ", markingNumSelectsInCurrentTrial);
-	console.log("tracker.menuType: ", tracker.menuType);
-
 	if (document.getElementById("targetItem").innerHTML.trim() == document.getElementById("selectedItem").innerHTML.trim()) {
 		$("#targetItem").css("background-color", "#444444");
-		if (tracker.menuType === "Marking") {
-			console.log("markingNumSelectsInCurrentTrial 2: ", markingNumSelectsInCurrentTrial);
-			tracker.recordNumActions(markingNumSelectsInCurrentTrial);
-		} else {
-			console.log("radialNumSelectsInCurrentTrial: ", radialNumSelectsInCurrentTrial);
-			tracker.recordNumActions(radialNumSelectsInCurrentTrial);
-		}
+		// if (tracker.menuType === "Marking") {
+		// 	console.log("markingNumSelectsInCurrentTrial: ", markingNumSelectsInCurrentTrial);
+		// 	tracker.recordNumActions(markingNumSelectsInCurrentTrial);
+		// } else {
+		// 	console.log("radialNumSelectsInCurrentTrial: ", radialNumSelectsInCurrentTrial);
+		// 	tracker.recordNumActions(radialNumSelectsInCurrentTrial);
+		// }
 		
 		nextTrial();
 	} else {
@@ -330,7 +327,7 @@ function markingMenuOnMouseDown() {
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem) {
-	// markingNumSelectsInCurrentTrial++;
+	tracker.recordNumActions(markingNumSelectsInCurrentTrial);
 	tracker.recordSelectedItem(selectedItem.name);
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
@@ -418,6 +415,7 @@ function toggleRadialMenu(e) {
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
 	radialNumSelectsInCurrentTrial++;
+	tracker.recordNumActions(radialNumSelectsInCurrentTrial);
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
